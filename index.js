@@ -7,7 +7,7 @@ const port = 3000;
 // respond to requests on `/api/employees`
 app.get('/api/employees', (req, res) => {
   // send an SQL query to get all employees
-  connection.query('SELECT * from employee', (err, results) => {
+  connection.query('SELECT * FROM employee', (err, results) => {
     if (err) {
       // If an error has occurred, then the client is informed of the error
       res.status(500).send(`An error occurred: ${err.message}`);
