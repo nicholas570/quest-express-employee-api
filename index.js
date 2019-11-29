@@ -10,7 +10,7 @@ app.get('/api/employees', (req, res) => {
   connection.query('SELECT * from employee', (err, results) => {
     if (err) {
       // If an error has occurred, then the client is informed of the error
-      res.status(500).send('Erreur lors de la récupération des employés');
+      res.status(500).send(`An error occurred: ${err.message}`);
     } else {
       // If everything went well, we send the result of the SQL query as JSON
       res.json(results);
